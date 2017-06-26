@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>Wedding</title>
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Anton|Courgette|Great+Vibes" rel="stylesheet">
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% endblock %}
+</head>
+
+
+<body>
+<style>
+    .bar {
+        background-color: #FF6666;
+        padding-bottom: 20px;
+        opacity: 0.75;
+    }
+    .bar:hover{
+        opacity: 1;
+    }
+
+    .navbar-brand {
+        font-family: 'Great Vibes';
+        color: floralwhite;
+        font-size: 2.7em;
+        padding-top: 1em;
+    }
+
+    .navbar-nav {
+        font-size: 1.8em;
+        padding-top: 1em;
+        padding-left: 2em;
+    }
+
+    .nav-spacing{
+        font-family: 'Courgette';
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .nav-spacing a{
+        color: antiquewhite;
+    }
+
+    .nav-spacing a:hover {
+        background-color: transparent !important;
+        color: dodgerblue;
+    }
+
+    body {
+        background-image: url(https://media.xogrp.com/images/398f3795-b8a4-4141-8a07-d4a3ae6c011a~rt_0-cr_0.36.2331.1202-rs_1800.h?compress=true);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: white;
+    }
+
+</style>
+<div class="background">
+    <div class="container-fluid bar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Marinella + Ryan</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-spacing"><a href="#">About US</a></li>
+                <li class="nav-spacing"><a href="#">Story</a></li>
+                <li class="nav-spacing"><a href="#">Ceremony</a></li>
+                <li class="nav-spacing"><a href="#">Gallery</a></li>
+                <li class="nav-spacing"><a href="#">Gifts</a></li>
+
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+</body>
+</html>
