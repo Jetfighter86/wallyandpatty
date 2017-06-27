@@ -1,0 +1,47 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+
+    <style>
+
+        #slideshow {
+            text-align: center;
+        }
+
+        #slideshowbox {
+            margin-left: 25%;
+        }
+        .galleria {
+            max-width: 900px;
+            height: 500px;
+            background: #000
+        }
+    </style>
+
+
+    <div id="slideshow">
+        <div id="slideshowbox">
+            <div class="galleria">
+                <img src="/image/image01.jpg">
+                <img src="/image/image02.jpg">
+                <img src="/image/image03.jpg">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        (function () {
+            Galleria.loadTheme('static/themes/classic/galleria.classic.min.js');
+            Galleria.run('.galleria');
+        }());
+    </script>
+
+
+    <h1>GALLERY</h1>
+
+{% endblock %}

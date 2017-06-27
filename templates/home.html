@@ -11,10 +11,9 @@
             padding-top: 20px;
         }
 
-        #clock{
-            align-content: center;
-            padding-top: 18%;
-            padding-left: 35%;
+        #clock {
+            padding-top: 3em;
+            text-align: center;
         }
 
         #clockdiv {
@@ -31,14 +30,14 @@
         #clockdiv > div {
             padding: 10px;
             border-radius: 3px;
-            background: #00BF96;
+            background: #FF9933;
             display: inline-block;
         }
 
         #clockdiv div > span {
             padding: 15px;
             border-radius: 3px;
-            background: #00816A;
+            background: #cccc00;
             display: inline-block;
         }
 
@@ -47,12 +46,60 @@
             font-size: 16px;
         }
 
+        #wrapperslideshow {
+            padding-top: 3%;
+            text-align: center;
+        }
+
+        #innerwrapperslideshow {
+            display: inline-block;
+
+        }
+
+        #slideshow {
+            position: relative;
+            width: 500px;
+            height: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        #slideshow > div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+
     </style>
 
-    <h3>Marinella + Ryan</h3>
+    <h3>Wally + Patty</h3>
+
+    <div id="wrapperslideshow">
+
+        <div id="innerwrapperslideshow">
+            <div id="slideshow">
+                <div>
+                    <img src="/image/image01.jpg">
+                </div>
+
+                <div>
+                    <img src="/image/image02.jpg">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 
     <div id="clock">
-    <div style="color:white; padding-left: 1em; font-size: 1.7em; font-family: 'Great Vibes';">Will be the happiest couple in the world in</div>
+        <div style="color:white; padding-left: 1em; font-size: 1.7em; font-family: 'Great Vibes';">Will be the happiest
+            couple in the world in
+        </div>
         <div id="clockdiv">
             <div>
                 <span class="days"></span>
@@ -118,6 +165,17 @@
 
         var deadline = new Date(Date.parse(new Date()) + 173 * 24 * 60 * 60 * 1000);
         initializeClock('clockdiv', deadline);
+
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function () {
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(4000)
+                .end()
+                .appendTo('#slideshow');
+        }, 3000);
 
 
     </script>
