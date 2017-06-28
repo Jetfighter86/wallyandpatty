@@ -1,0 +1,101 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        h2 {
+            color: white;
+            font-family: 'Great Vibes';
+            text-align: center;
+            font-size: 4em;
+            padding-top: 10px;
+            text-shadow: 2px 2px 7px #EE7979;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        text {
+            background: #ff3333;
+            fill-opacity: 0.4;
+            color: white;
+            font-size: 125%;
+            position: absolute;
+            top: 30%;
+            left: 15%
+        }
+
+        #box {
+            width: 30%;
+            height: 300px;
+            background: transparent;
+            display: block;
+            margin: auto;
+            border: #ff6666;
+            border-style: solid;
+            border-width: 20px;
+
+        }
+
+        #redbox {
+            background: #ff3333;
+            margin: 0px auto;
+            opacity: 0.85;
+            height: 15%;
+            text-align: center;
+        }
+
+        .eventbox {
+            position: relative;
+            vertical-align: middle;
+            margin: 0px auto;
+            height: 30%;
+            text-align: left;
+            border-color: darkred;
+            border-width: 2px;
+            border-bottom-style: double;
+            background: white;
+        }
+
+
+    </style>
+    </head>
+    <body>
+
+    <h2>Our Special Event</h2>
+
+    <div class="row">
+        <img width="30%" style="display: block;margin: auto"
+             src="https://taipeiphotography.files.wordpress.com/2013/11/green-101.jpg">
+    </div>
+
+    <div class="row" style="padding-bottom: 5em; padding-top: 3em">
+        <div id="box">
+            <div id="redbox">
+                <div style="display: inline-block;position: relative;"><span style="font-size: 200%;font-family: Gravitas One; color: white"><bold>Taipei 101</bold></span></div>
+            </div>
+            <div class="eventbox">
+                <img width="40px" style="margin-top: 2.5%; margin-left: 2.5%" src="/image/icon/clock-icon.png">
+                <text>12:00 PM Noon</text>
+            </div>
+            <div class="eventbox">
+                <img width="40px" style="margin-top: 2.5%; margin-left: 2.5%" src="/image/icon/calendar-icon.png">
+                <text>Sunday 22 - October 2017</text>
+            </div>
+            <div class="eventbox">
+                <img width="40px" style="margin-top: 2.5%; margin-left: 2.5%" src="/image/icon/location-icon.png">
+                <text>Taipei 101, No. 7, Section 5</text>
+            </div>
+            <div></div>
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}

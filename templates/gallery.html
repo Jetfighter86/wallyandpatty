@@ -7,26 +7,45 @@
     <style>
 
         #slideshow {
-            text-align: center;
+            display: block;
+            margin: auto;
+            width: 50%;
+            background: white;
         }
 
         #slideshowbox {
-            margin-left: 25%;
+            margin:auto;
+            margin-top: 2em;
+
         }
+
         .galleria {
-            max-width: 900px;
-            height: 500px;
-            background: #000
+{#            max-width: px;#}
+            width: 100%;
+            height: 600px;
+            background: #fff
+
+        }
+
+        h2 {
+            color: white;
+            font-family: 'Great Vibes';
+            text-align: center;
+            font-size: 4em;
+            padding-top: 10px;
+            text-shadow: 2px 2px 7px #EE7979 ;
         }
     </style>
 
+    <h2>Gallery</h2>
 
     <div id="slideshow">
         <div id="slideshowbox">
             <div class="galleria">
-                <img src="/image/image01.jpg">
-                <img src="/image/image02.jpg">
-                <img src="/image/image03.jpg">
+                {% for each in range(18) %}
+                    <img src="/image/slideshow/image{{ each }}.jpg">
+                {% endfor %}
+
             </div>
         </div>
 
@@ -37,11 +56,14 @@
     <script>
         (function () {
             Galleria.loadTheme('static/themes/classic/galleria.classic.min.js');
-            Galleria.run('.galleria');
+            Galleria.run('.galleria', {
+                transition: 'fade',
+                autoplay: 3000
+                }
+
+            );
         }());
     </script>
 
-
-    <h1>GALLERY</h1>
 
 {% endblock %}

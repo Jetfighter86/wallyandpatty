@@ -7,60 +7,51 @@
             color: white;
             font-family: 'Great Vibes';
             text-align: center;
-            font-size: 5em;
+            font-size: 6em;
             padding-top: 20px;
+            text-shadow: 2px 2px 7px #EE7979;
+            display: block;
+            margin: auto;
         }
 
         #clock {
-            padding-top: 3em;
+            bottom: 0;
             text-align: center;
+
         }
 
         #clockdiv {
             font-family: sans-serif;
             color: #fff;
             display: inline-block;
-            font-weight: 100;
+            margin: auto;
+            font-weight: 300;
             text-align: center;
             font-size: 30px;
             align-content: center;
-            opacity: .65;
+            opacity: .95;
         }
 
         #clockdiv > div {
-            padding: 10px;
+            position: relative;
+            bottom: 0;
+            padding: 0.5em;
             border-radius: 3px;
-            background: #FF9933;
+            background: transparent;
             display: inline-block;
         }
 
         #clockdiv div > span {
             padding: 15px;
             border-radius: 3px;
-            background: #cccc00;
+            background: #404040;
             display: inline-block;
         }
 
         .smalltext {
             padding-top: 5px;
-            font-size: 16px;
-        }
-
-        #wrapperslideshow {
-            padding-top: 3%;
-            text-align: center;
-        }
-
-        #innerwrapperslideshow {
-            display: inline-block;
-
-        }
-
-        #slideshow {
-            position: relative;
-            width: 500px;
-            height: 400px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            font-size: 0.8em;
+            text-shadow: 2px 2px 7px #EBEB32;
         }
 
         #slideshow > div {
@@ -75,29 +66,29 @@
 
     <h3>Wally + Patty</h3>
 
-    <div id="wrapperslideshow">
-
-        <div id="innerwrapperslideshow">
-            <div id="slideshow">
-                <div>
-                    <img src="/image/image01.jpg">
-                </div>
-
-                <div>
-                    <img src="/image/image02.jpg">
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
+    {#    <div id="wrapperslideshow">#}
+    {##}
+    {#        <div id="innerwrapperslideshow">#}
+    {#            <div id="slideshow">#}
+    {#                <div>#}
+    {#                    <img src="/image/image01.jpg">#}
+    {#                </div>#}
+    {##}
+    {#                <div>#}
+    {#                    <img src="/image/image02.jpg">#}
+    {#                </div>#}
+    {##}
+    {#            </div>#}
+    {##}
+    {#        </div>#}
+    {##}
+    {##}
+    {#    </div>#}
 
 
 
     <div id="clock">
-        <div style="color:white; padding-left: 1em; font-size: 1.7em; font-family: 'Great Vibes';">Will be the happiest
+        <div style="color:white; font-size: 2.5em; font-family: 'Great Vibes';text-shadow: 2px 2px 7px black ;display: block; margin: auto">Will be the happiest
             couple in the world in
         </div>
         <div id="clockdiv">
@@ -125,7 +116,7 @@
 
     <script>
         function getTimeRemaining(endtime) {
-            var t = Date.parse(endtime) - Date.parse(new Date());
+            var t = Date.parse(endtime) - Date.now();
             var seconds = Math.floor((t / 1000) % 60);
             var minutes = Math.floor((t / 1000 / 60) % 60);
             var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
@@ -163,7 +154,8 @@
             var timeinterval = setInterval(updateClock, 1000);
         }
 
-        var deadline = new Date(Date.parse(new Date()) + 173 * 24 * 60 * 60 * 1000);
+        var deadline = new Date(2017, 9, 22, 0, 0, 0);
+        {#        var deadline = new Date(Date.parse(new Date()) + 173 * 24 * 60 * 60 * 1000);#}
         initializeClock('clockdiv', deadline);
 
         $("#slideshow > div:gt(0)").hide();

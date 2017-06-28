@@ -1,0 +1,206 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        p {
+            color: black;
+            padding: 2em 0px;
+        }
+
+        h2 {
+            color: white;
+            font-family: 'Great Vibes';
+            text-align: center;
+            font-size: 4em;
+            padding-top: 10px;
+            text-shadow: 2px 2px 7px #EE7979 ;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 500px;
+            position: relative;
+            margin: auto;
+            background: white;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 3s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 3.5s;
+            animation-name: fade;
+            animation-duration: 3.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+    </head>
+    <body>
+
+    <h2>Our Story</h2>
+
+    <div style="background: rgba(179, 179, 179, 0.65); padding-top: 3em; width: 75%; display: block; margin: auto ">
+
+
+        <div style="text-align:center">
+            {% for each in range(5) %}
+                <span class="dot"></span>
+            {% endfor %}
+        </div>
+
+        <div class="row" style="color:white;">
+            <div class="col-md-3"></div>
+
+            <div class="col-md-6">
+                <div style="color:white;background: rgba(255,255,255,1); padding: 2em 3em">
+                    <div class="slideshow-container">
+
+                        {% for each in range(5) %}
+                            <div class="mySlides fade">
+                                <div class="numbertext"></div>
+                                <img src="/image/story/image{{ each }}.jpg" style="width:100%">
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat vehicula nulla sed
+                        mollis. Etiam eleifend lectus dictum augue tristique luctus. Nunc sit amet mattis elit, et
+                        sodales elit. Nullam placerat id lectus nec venenatis. Morbi sed mattis est, sit amet tincidunt
+                        velit. Aliquam in pretium metus. Vestibulum eros dolor, aliquam sed lorem eget, laoreet pharetra
+                        tortor. Phasellus id dui diam. Nam facilisis tristique nisl, non posuere nibh tempus id. Aenean
+                        sed urna eu enim convallis pretium venenatis vitae dolor. Nullam porta varius dui, ac placerat
+                        turpis. Integer quis ultricies est. Nulla gravida eros aliquet purus egestas pulvinar. Nulla
+                        eget dui aliquet, pellentesque magna id, interdum libero.
+
+                        Curabitur interdum est placerat, imperdiet lorem id, cursus libero. Duis ut maximus felis, eget
+                        semper purus. Aliquam vestibulum, urna eu suscipit tincidunt, purus metus egestas felis, ut
+                        pretium nisl magna vitae felis. Quisque ac sem orci. Sed feugiat ac quam vel tempus. Duis
+                        vestibulum consectetur metus. Donec eu nunc eget mi rhoncus pellentesque. Suspendisse non
+                        imperdiet turpis. Aliquam erat volutpat. Suspendisse tincidunt pretium eros eu rhoncus. Duis
+                        eget sodales erat. Aliquam suscipit augue vitae fermentum facilisis. Donec aliquam sagittis
+                        nunc, non dapibus ante. Cras hendrerit eu elit nec varius. Etiam vitae tellus vitae tortor
+                        facilisis laoreet.
+
+                        Cras vitae diam ut quam scelerisque varius commodo in sapien. Donec tincidunt eu erat eu
+                        rhoncus. Integer eleifend risus nibh, id accumsan magna congue ut. Aliquam auctor lectus et
+                        consequat molestie. Suspendisse blandit bibendum mauris sed blandit. Curabitur efficitur a erat
+                        ac fringilla. Duis ac dui in urna ullamcorper tincidunt quis non ligula. Integer ac auctor leo.
+                        Duis a augue mi. Quisque porta mi vitae nulla feugiat, et pulvinar ipsum volutpat. Nullam nec
+                        laoreet mi. Sed placerat urna vitae imperdiet ullamcorper. Mauris et euismod neque. Sed vehicula
+                        dolor sed tortor aliquam bibendum. Nulla facilisi. Donec vel lacus efficitur, ultrices quam ac,
+                        tempus risus.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+    </script>
+
+
+{% endblock %}
